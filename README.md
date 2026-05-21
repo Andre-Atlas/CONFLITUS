@@ -1,6 +1,6 @@
-# 🌍 CONFLITUS V2 — Observatório Geopolítico & Aviação Humanitária
+# 🌍 CONFLITUS — Observatório Geopolítico & Aviação Humanitária
 
-O **CONFLITUS V2** é uma plataforma educacional e geopolítica interativa projetada para monitorar conflitos armados ativos ao redor do mundo, detalhar seus contextos socio-históricos e simular rotas de fuga ou evacuação aérea humanitária de emergência. 
+O **CONFLITUS** é uma plataforma educacional e geopolítica interativa projetada para monitorar conflitos armados ativos ao redor do mundo, detalhar seus contextos socio-históricos e simular rotas de fuga ou evacuação aérea humanitária de emergência. 
 
 Combinando fontes de dados de conflitos em tempo real, mapas interativos em 3D e integrações com APIs de aviação, o sistema visa conscientizar e educar sobre crises globais e logística humanitária.
 
@@ -76,7 +76,7 @@ graph TD
 ## 📂 Estrutura de Diretórios
 
 ```text
-CONFLITUS-V2/
+CONFLITUS/
 ├── backend/                       # Backend em Python/FastAPI
 │   ├── app/
 │   │   ├── controllers/           # Endpoints/Roteadores (conflitos, rotas, acolhimento)
