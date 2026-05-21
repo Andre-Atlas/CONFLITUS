@@ -1,0 +1,6 @@
+{
+  "name": "Conflitus: Observatório Geopolítico",
+  "description": "Um observatório geopolítico interativo que mapeia e detalha zonas de impacto usando o globo 3D do Mapbox.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

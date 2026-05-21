@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pandas
+numpy
+requests
+pydantic
+python-dotenv
+duffel-api
+requests
+scikit-learn
