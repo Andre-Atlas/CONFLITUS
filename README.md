@@ -129,7 +129,37 @@ VITE_MAPBOX_TOKEN=pk.eyJ1Ijoic2V1X3Rva2VuX21hcGJveCJ9...
 
 ---
 
-## 🏃 Como Rodar o Projeto Localmente
+## 🐳 Como Rodar com Docker (Recomendado)
+
+A maneira mais simples de executar a aplicação (especialmente em modo de produção) é utilizando o Docker e o Docker Compose. O Docker configurará automaticamente os ambientes Node.js e Python, instalará as dependências e fará o link entre o frontend e o backend.
+
+### Pré-requisitos
+* **Docker** e **Docker Compose** instalados na sua máquina.
+
+### Passo 1: Configurar Variáveis de Ambiente
+Certifique-se de ter criado o arquivo `.env` na raiz do projeto com as chaves necessárias (veja a seção acima).
+
+### Passo 2: Executar com Docker Compose
+No terminal, execute o seguinte comando na raiz do projeto:
+
+```bash
+# Constrói as imagens (se necessário) e sobe os containers em segundo plano
+docker compose up -d --build
+```
+
+A aplicação estará disponível em **[http://localhost:3000](http://localhost:3000)**.
+O backend FastAPI roda de forma independente na porta `8000` internamente (mas o acesso principal se dá via proxy pelo `3000`).
+
+Para parar a execução e remover os containers:
+```bash
+docker compose down
+```
+
+---
+
+## 🏃 Como Rodar o Projeto Localmente (Desenvolvimento)
+
+Caso prefira rodar o projeto localmente para desenvolvimento (com *hot-reload*), siga os passos abaixo:
 
 ### Pré-requisitos
 * **Node.js** (versão 18 ou superior)
@@ -171,9 +201,9 @@ Acesse no seu navegador: **[http://localhost:3000](http://localhost:3000)**.
 
 ---
 
-## 📦 Compilação para Produção (Build)
+## 📦 Compilação para Produção (Build Local)
 
-Se você deseja gerar a distribuição otimizada para implantação, execute:
+Se você não estiver usando Docker e desejar gerar a distribuição otimizada para implantação local, execute:
 ```bash
 npm run build
 ```
@@ -181,11 +211,13 @@ O comando acima irá:
 1. Compilar o frontend React otimizado com o Vite dentro da pasta `dist/`.
 2. Compilar o arquivo `server.ts` de proxy e rotas estáticas utilizando o esbuild para `dist/server.cjs`.
 
-Para rodar o pacote final compilado:
+Para rodar o pacote final compilado junto com o backend:
 ```bash
-npm start
+npm run start:full
 ```
-O aplicativo de produção será servido em `http://localhost:3000`.
+*Nota: O comando `npm start` sobe apenas o servidor proxy do frontend. O `npm run start:full` garante que o backend Python também seja inicializado na porta 8000.*
+
+O aplicativo de produção será servido em **[http://localhost:3000](http://localhost:3000)**.
 
 ---
 
